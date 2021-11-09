@@ -1,4 +1,4 @@
-# vuex
+# Vuex | Integral
 
 ## Install Vue CLI
 - ```npm install -g @vue/cli```
