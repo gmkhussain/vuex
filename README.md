@@ -220,3 +220,116 @@ export default {
 }
 </script>
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Actions API
+- install Axios ```npm i axios --save```
+
+
+// store/index.js
+```js
+import { createStore } from 'vuex'
+import axios from 'axios' // <-- Here
+
+export default createStore({
+    state() {
+      return {
+        count: 1,
+        reviews: {}
+      }
+    },
+    mutations: {
+      /*
+       @ Alter Data
+       @ commit use for mutations
+      */
+      addQty(state) {
+        state.count++
+      },
+      removeQty(state) {
+        if(state.count > 0) {
+          state.count--
+        }
+      },
+
+      updateReviews( state, payload) {
+        state.reviews = payload;
+      }
+
+    },
+    actions: {
+      /*
+       @ API calls
+       @ dispatch use for actions.
+      */
+      async getReviewsApiData({commit}) {   // <-- Here
+        let resp = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+          console.log(resp)
+          commit('updateReviews', resp.data )
+      }
+    },
+    getters: {
+      // Get Data
+    },
+    // products
+    modules: { }
+})
+```
+
+
+
+
+
+
+
+// Products.vue
+```js
+<template>
+    <div>
+        <h4>Products</h4>
+        <button @click="addQtyFunc">+Add </button>
+        <button @click="getReviewsFunc">View Reviews</button>
+        {{$store.state.reviews}}  // <-- Here
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Products',
+    methods: {
+        addQtyFunc() {
+            console.log("addQty() called")
+            this.$store.commit('addQty')
+        },
+        getReviewsFunc() { 
+            this.$store.dispatch('getReviewsApiData') // <-- Here
+        }
+    }
+}
+</script>
+```
