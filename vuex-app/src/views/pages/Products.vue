@@ -1,12 +1,18 @@
 <template>
     <div>
         <h4>Products</h4>
-        Value from store: {{ $store.state.count }}
+        <button @click="addQtyFunc">+Add </button>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Products'
+    name: 'Products',
+    methods: {
+        addQtyFunc() {
+            console.log("addQty() called")
+            this.$store.commit('addQty')
+        }
+    }
 }
 </script>

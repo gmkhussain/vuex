@@ -1,14 +1,19 @@
 <template> 
-  <Products />
+  <div>
+    <CartMini />
+    <Products />
+  </div>
 </template>
 
 <script>
 import Products from './views/pages/Products.vue'
+import CartMini from '@/views/pages/CartMini.vue'
 
 export default {
   name: 'App',
   components: {
-    Products
+    Products,
+    CartMini
   }
 }
 </script>
