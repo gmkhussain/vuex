@@ -2,7 +2,6 @@ import { createStore } from 'vuex'
 // import products from './modules/products'
 
 export default createStore({
-  
     state() {
       return {
         count: 1
@@ -39,26 +38,3 @@ export default createStore({
 
 
 
-
-// App.vue
-```js
-<template> 
-  <div>
-    <CartMini />
-    <Products />
-  </div>
-</template>
-
-<script>
-import Products from './views/pages/Products.vue'
-import CartMini from '@/views/pages/CartMini.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Products,
-    CartMini
-  }
-}
-</script>
-```
