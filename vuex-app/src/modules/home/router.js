@@ -12,10 +12,17 @@ const moduleRoute = {
     {
         path: "/about",
         component: () => import("./views/About.vue")
-    }
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: () => import("./views/Page404.vue"),
+    },
   ]
 };
+
+
 console.log(moduleRoute)
+
 
 export default (router) => {
     router.addRoute(moduleRoute);
