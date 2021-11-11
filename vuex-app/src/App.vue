@@ -1,6 +1,10 @@
 <template> 
   <div>
+    <router-link to="/products/home">Product</router-link>
+    <router-link to="/cart">Cart</router-link>
+
     <router-view />
+
   </div>
 </template>
 

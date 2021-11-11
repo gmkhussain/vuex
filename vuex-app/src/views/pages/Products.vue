@@ -3,7 +3,7 @@
         <h4>Products</h4>
         <button @click="addQtyFunc">+Add </button>
         <button @click="getReviewsFunc">View Reviews</button>
-        {{$store.state.reviews}}
+        
     </div>
 </template>
 

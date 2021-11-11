@@ -6,6 +6,6 @@
 
 <script>
 export default {
-    name: 'HomeModule'
+    name: 'Home'
 }
 </script>

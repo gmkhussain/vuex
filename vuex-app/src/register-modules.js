@@ -6,6 +6,8 @@ const registerModule = (name, module) => {
   console.log("name", name)
   console.log("module", module)
 
+  console.log("Store", store )
+
   if (module.store) {
     store.registerModule(name, module.store);
   }
